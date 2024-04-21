@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+     # force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+   RewriteBase /blog/
+   RewriteRule  ^$ public/    [L]
+   RewriteRule  (.*) public/$1 [L]
+</IfModule>
