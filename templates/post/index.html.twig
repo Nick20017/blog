@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block body %}
+
+<main class="posts-container">
+	{% for flashMessage in app.flashes('success') %}
+		<div class="alert alert-success">
+			{{flashMessage}}
+		</div>
+	{% endfor %}
+	{% for flashMessage in app.flashes('error') %}
+		<div class="alert alert-danger">
+			{{flashMessage}}
+		</div>
+	{% endfor %}
+    <h1>Posts</h1>
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post">
+                <img src="{{ asset('img/post.webp') }}" alt="{{post.title}} image" loading="lazy" />
+                <a href="/post/delete/{{post.id}}" class="delete-post-button">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </a>
+                <div>
+                    <div class="post-title">{{post.title}}</div>
+                    <div class="post-content">{{post.content}}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+
+{% endblock %}

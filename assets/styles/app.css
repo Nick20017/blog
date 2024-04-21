@@ -1,0 +1,274 @@
+* {
+    font-size: 14px;
+    box-sizing: border-box;
+    
+    font-family: "Lugrasimo", cursive;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(45deg, azure 0%, skyblue 50%, aliceblue 100%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+input, button {
+    border: none;
+    outline: none;
+
+    box-shadow: 0 0 1px 1px #000;
+    width: 100%;
+
+    padding: 1rem .5rem;
+    border-radius: .5rem;
+}
+
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    background: linear-gradient(45deg, red 0%, blue 40%, green );
+}
+
+button,
+button *,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    font-size: 18px;
+    color: #fff;
+}
+
+.alert {
+    width: 100%;
+    border-radius: .5rem;
+    color: #fff;
+
+    padding: .5rem 1rem;
+}
+
+.alert,
+.alert * {
+    font-size: 16px;
+}
+
+.alert ul,
+.alert li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.alert ul > li:not(:last-of-type) {
+    margin-bottom: .5rem;
+}
+
+.alert.alert-success {
+    background: green;
+}
+
+.alert.alert-danger {
+    background: red;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.logout-button {
+    position: fixed;
+    top: 1vh;
+    right: 1vw;
+
+    line-height: 1;
+
+    padding: 1rem 1.1rem;
+    border-radius: 50%;
+    background: #fff;
+
+    box-shadow: 1px 1px 5px 1px #000;
+}
+
+.login-form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 10vh auto 0;
+}
+
+.login-form > * {
+    width: 100%;
+}
+
+.login-form input {
+    margin-bottom: 1.5rem;
+}
+
+.login-form .login-switch {
+    color: #000;
+    margin-top: 1rem;
+    margin-left: auto;
+    display: block;
+    width: fit-content;
+}
+
+.posts-container {
+    padding: 2rem 5%;
+}
+
+.posts-container h1 {
+    margin-top: 0;
+}
+
+.posts-container .posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+}
+
+.posts-container .posts .post {
+    margin-bottom: 1.5rem;
+
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.posts-container img {
+    width: 100px;
+    max-width: 100%;
+
+    float: left;
+    margin-right: 1rem;
+}
+
+.posts-container .post > div {
+    padding: 1rem;
+}
+
+.posts-container img + div::after {
+    clear: both;
+}
+
+.posts-container .posts .post .post-title,
+.posts-container .posts .post .post-title * {
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.posts-container .posts .post .post-content,
+.posts-container .posts .post .post-content * {
+    color: #535353;
+}
+
+.posts-container .posts .post .delete-post-button {
+    float: right;
+
+    padding: .5rem;
+    background: red;
+    border-radius: 5px;
+
+    margin-left: 1rem;
+}
+
+.posts-container .posts .post .delete-post-button,
+.posts-container .posts .post .delete-post-button * {
+    color: #fff;
+}
+
+@media screen and (max-width: 991px) {
+    .posts-container .posts .post .post-title,
+    .posts-container .posts .post .post-title * {
+        font-size: 18px;
+    }
+
+    .login-form {
+        width: 50%;
+        margin: 5vh auto 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .posts-container .posts .post .post-content,
+    .posts-container .posts .post .post-content * {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .posts-container .posts .post .post-title,
+    .posts-container .posts .post .post-title * {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .login-form {
+        width: 80%;
+        margin: 5vh auto 0;
+    }
+
+    .logout-button {
+        padding: .5rem .6rem;
+        right: 1rem;
+    }
+
+    .logout-button,
+    .logout-button * {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .posts-container .posts .post .post-title,
+    .posts-container .posts .post .post-title * {
+        font-size: 14px;
+    }
+
+    .posts-container .posts .post .post-content,
+    .posts-container .posts .post .post-content * {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .posts-container img {
+        width: 100%;
+
+        float: none;
+    }
+
+    .posts-container .posts .post {
+        position: relative;
+    }
+
+    .posts-container .posts .post .delete-post-button {
+        float: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+    
+        padding: .5rem;
+        background: red;
+        border-radius: 5px;
+    
+        margin-left: 1rem;
+    }
+}
