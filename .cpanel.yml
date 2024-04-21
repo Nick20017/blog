@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    -export DEPLOYPATH=/blog/
+    - /bin/cp -R * $DEPLOYPATH
