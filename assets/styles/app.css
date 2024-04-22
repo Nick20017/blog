@@ -2,7 +2,7 @@
     font-size: 14px;
     box-sizing: border-box;
     
-    font-family: "Lugrasimo";
+    font-family: "Lugrasimo", cursive;
 }
 
 body {
@@ -193,6 +193,10 @@ h1 {
 }
 
 @media screen and (max-width: 991px) {
+    * {
+        font-family: "Source Sans 3", sans-serif;
+    }
+
     .posts-container .posts .post .post-title,
     .posts-container .posts .post .post-title * {
         font-size: 18px;
